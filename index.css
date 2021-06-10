@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.keyboard div kbd{
+    border: 1px solid red;
+    display: inline-block;
+    padding: 30px;
+    margin: 0 10px;
+    position: relative;
+}
+
+.keyboard div kbd .key{
+    position: absolute;
+    display: inline-block;
+    left: 3px;
+    top: 3px;
+    text-transform: uppercase;
+}
+.keyboard div kbd .edit{
+    position: absolute;
+    right: 3px;
+    border: 3px;
+    display: none;
+}
+.keyboard div kbd:hover .edit{
+    display: inline-block;
+    cursor: pointer;
+}
+
+.keyboard div {
+    padding: 5px 0;
+}
+
+.keyboard {
+    text-align: center;
+    border: 1px solid green;
+}
