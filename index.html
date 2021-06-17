@@ -3,77 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>36start</title>
-    <link rel="stylesheet" href="index.css">
-    <script src="index.js"></script>
+    <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <main id="mainKeyboard" class="keyboard">
+    <main id="myKeyboard" class="keyboard">
     </main>
-    <script>
-        keyboard = {
-            "1":["q","w","e","r","t","y","u","i","o","p"],
-            "2":["a","s","d","f","g","h","j","k","l"],
-            "3":["z","x","c","v","b","n","m"],
-            "lens": 3
-        }
-
-        sites = {
-            "q":"https://qq.com",
-            "p":"https://prometheus.io",
-            "s":"https://sina.com",
-            "g":"https://google.com",
-            "a":"https://alibaba.com",
-            "t":"https://taobao.com",
-            "j":"https://jd.com",
-            "x":"https://xiaomi.com",
-        }
-
-        // 将sites存到本地，在第二次打开的时候，若本地存在则读取本地的
-        localSites = JSON.parse(localStorage.getItem("sites") || null)
-        if ( localSites ){
-            sites = localSites
-        }else {
-            localStorage.setItem("sites", JSON.stringify(sites))
-        }
-
-        // 生成键盘
-        for (let i =1; i <= keyboard.lens; i++){
-            divxxxx = document.createElement("div")
-            for (let j=0; j < keyboard[i].length; j++) {
-                span1xxx = document.createElement("span")
-                span1xxx.textContent = keyboard[i][j]
-                span1xxx.setAttribute("class","key")
-                buttonxxx = document.createElement("button")
-                buttonxxx.textContent = "编辑"
-                buttonxxx.setAttribute("class","edit")
-                buttonxxx.setAttribute("id",keyboard[i][j])
-                buttonxxx.onclick = function (ev){
-                    w = prompt("请给我一个网站，绑定到" + keyboard[i][j] + "键上:")
-                    sites[ev.target.id] = w
-                    localStorage.setItem("sites", JSON.stringify(sites))
-                }
-                kbdxxx =document.createElement("kbd")
-                kbdxxx.appendChild(span1xxx)
-                kbdxxx.appendChild(buttonxxx)
-                divxxxx.appendChild(kbdxxx)
-            }
-            mainKeyboard.appendChild(divxxxx)
-        }
-
-        // 捕获键盘
-        document.onkeypress = function (ev) {
-            console.log(ev)
-            if ( ! sites[ev.key]) {
-                alert("没有绑定哦～")
-                return
-            }
-            window.open(sites[ev.key])
-        }
-
-
-
-
-    </script>
+    <script src="./index.js"></script>
 </body>
 </html>
 

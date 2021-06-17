@@ -9,37 +9,91 @@
     clear: both;
 }
 
+body {
+    height: 100vh;
+    background-image: url(./imgs/bg.jpg);
+    background-size: cover;
+}
+
+.keyboard{
+    height: 100vh;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+}
+
 .keyboard div kbd{
-    border: 1px solid red;
     display: inline-block;
     padding: 30px;
-    margin: 0 10px;
+    margin: 0 2px;
     position: relative;
+    background-color: #272727;
+    color: #F4F4F4;
+    font-size: 16px;
+    border-radius: 12px;
+    border-top: 4px solid #1E1E1E;
+    border-left: 6px solid #1E1E1E;
+    border-right: 6px solid #1E1E1E;
+    border-bottom: 8px solid #1E1E1E;
 }
 
 .keyboard div kbd .key{
     position: absolute;
     display: inline-block;
-    left: 3px;
-    top: 3px;
+    left: 6px;
+    top: 6px;
     text-transform: uppercase;
 }
 .keyboard div kbd .edit{
     position: absolute;
-    right: 3px;
-    border: 3px;
+    right: 2px;
+    bottom: 2px;
+    border: none;
+    font-size: 12px;
     display: none;
+    color: #ffffff;
+    background: #000;
 }
 .keyboard div kbd:hover .edit{
     display: inline-block;
     cursor: pointer;
 }
 
-.keyboard div {
-    padding: 5px 0;
+.keyboard > div > div {
+    padding: 0 0 1px 0;
 }
 
-.keyboard {
-    text-align: center;
-    border: 1px solid green;
+.keyboard .wrapper {
+    width: 820px;
+    background-color: #141414;
+    border-radius: 10px;
+}
+
+.keyboard .wrapper .raw1 {
+    margin-left: 2em;
+}
+
+.keyboard .wrapper .raw2 {
+    margin-left: 3em;
+}
+
+.keyboard .wrapper .raw3 {
+    margin-left: 5em;
+}
+
+.keyboard .wrapper kbd .favicon{
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+}
+
+.keyboard .wrapper kbd .efavicon{
+    height: 4px;
+    width: 4px;
+    position: absolute;
+    border-radius: 2px;
+    left: 8px;
+    bottom: 8px;
 }
